@@ -2,7 +2,6 @@ package com.ruisu.filmgazebackendspringboot.controllers;
 
 import com.ruisu.filmgazebackendspringboot.entities.Movie;
 import com.ruisu.filmgazebackendspringboot.services.MovieService;
-import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -29,7 +28,6 @@ public class MovieController {
     @GetMapping("/{imdbId}")
     public ResponseEntity<Optional<Movie>> getMovie(@PathVariable String imdbId){
         return new ResponseEntity<>(movieService.getMovie(imdbId), HttpStatus.OK);
-
     }
 
 }
